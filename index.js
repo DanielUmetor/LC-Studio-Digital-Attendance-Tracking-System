@@ -1,5 +1,7 @@
 import path from 'path'
 import cors from 'cors'
+import { userRouter, express } from './controller/UserController.js' 
+import { errorHandling } from './middleware/errorHandling.js'
 
 
 const app = express()
@@ -15,6 +17,7 @@ app.use((req, res, next) => {
     res.header("Access-Control-Expose-Headers", "Authorization")
     next()
   })
+  app.use('/users', userRouter)
   app.use(
     express.static("./static"),
     express.json(),
@@ -37,3 +40,5 @@ app.use(errorHandling)
 app.listen(port, () => {
     console.log(`Live on port: ${port}`)
 })
+
+
