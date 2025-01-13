@@ -9,10 +9,14 @@ class Users{
             Select user_id, first_name, last_name, department_name from users;
             `
             db.query(strQry, (err, results) => {
-                if(err) throw err 
+                if(err){
+                  console.log(err.message);
+                  
+                } else{
                 res.json({
                     status: res.statusCode,
                     results})
+                  }
             })
         } catch (e){
            res.json({
