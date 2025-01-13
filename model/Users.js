@@ -10,7 +10,7 @@ class Users{
             `
             db.query(strQry, (err, results) => {
                 if(err){
-                  console.log(err.message);
+                  console.log(err);
                   
                 } else{
                 res.json({
