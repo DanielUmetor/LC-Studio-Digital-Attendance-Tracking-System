@@ -6,7 +6,7 @@ class Users{
     fetchUsers(req,res){
         try{
             const strQry = `
-            Select user_id, first_name, last_name, department_name from users;
+            Select user_id, first_name, last_name, department_name, rfid_id from users;
             `
             db.query(strQry, (err, results) => {
                 if(err) throw err 
@@ -24,7 +24,7 @@ class Users{
     fetchUser(req, res) {
         try{
             const strQry = `
-            Select user_id, first_name, last_name, department_name from users
+            Select user_id, first_name, last_name, department_name,rfid_id from users
             where user_id = ${req.params.id}
             `
             db.query(strQry, (err, result) => {
