@@ -6,7 +6,7 @@ class Users{
     fetchUsers(req,res){
         try{
             const strQry = `
-            SELECT user_id, first_name, last_name, department_name FROM users;
+            SELECT * FROM users;
             `
             db.query(strQry, (err, results) => {
                 if(err){
