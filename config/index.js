@@ -7,7 +7,7 @@ let connection = createPool ({
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
     multipleStatements: true,
-    connectionLimit: 30
+    connectionLimit: 380
 })
 
 connection.on('connection', (pool) => {
